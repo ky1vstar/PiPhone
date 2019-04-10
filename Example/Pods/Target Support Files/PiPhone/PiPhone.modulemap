@@ -1,0 +1,6 @@
+framework module PiPhone {
+  umbrella header "PiPhone-umbrella.h"
+
+  export *
+  module * { export * }
+}

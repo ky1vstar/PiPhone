@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		052A71A63390C1397BCA8CD0C1CE24FA /* PiPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */; };
+		08C26A63A92F3276CB4952CBEB2F9F7B /* PiPSafeAreaObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */; };
+		09E116C561C2285C2D0C58F94FF76BEB /* PiPRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0BBEB56F0A6357D7281A25494FF88DC2 /* PiPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */; };
+		13A493D263C8CBBF2D914C1638E76E30 /* UIImage+PiPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */; };
+		141C82A5F16C1FBB972CE9FA20C24E86 /* PiPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAA93B82D2FC6425B9C41C91093762F /* PiPRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1557A241C2A75E3EBA7BEF735F995A59 /* PiPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FAE31A24E116CEF39C2182246CE251 /* PiPButton.m */; };
+		2367065B0C9F99F5AABECF91393D16D8 /* PiPStashedView.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5155969506447B3245DE8D8E566634 /* PiPStashedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		31BEE7689961192FA9579D69716B1213 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D549FF905B33F6AD4B01ED4BBAD197CC /* UIKit.framework */; };
+		412CD3C0DD6E554616AF57C34FDC98CB /* PiPhone-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 512CE8DFBFAD5120762E96DF9DF68891 /* PiPhone-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A686645477C4F7799447E122E3F6E9A /* PiPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */; };
+		50025814B7EEC3549AEF4037019793E4 /* Pods-Example Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042ABB50792E5328452915DDDA6DB79 /* Pods-Example Swift-dummy.m */; };
+		553D5E15F2845A12C8831EEAF1EF3801 /* PiPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		638CF27BC69BC6A1FFBB304820B5BCD0 /* PiPPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */; };
+		64635DCE38DF99C4D734037AE26DAA69 /* PiPLoadingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6B4C429FED14DCAC5C1519BA0DC5A1C5 /* PiPPlayerLayerObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */; };
+		6BB8DB7854A3560ABF2461A8B5225FF2 /* PiPPlayerLayerObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C63AEAEF4374C5A92C68FF10BA6EB24C /* PiPPlayerLayerObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		78F98EE10B5459F2C98284B86D724ED6 /* PiPSafeAreaObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7CEC5A96C33041C250903FDD2E225566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8DDCEEF96F75803277C8ED5CE2D63A /* Assets.xcassets */; };
+		811766FFD00E8EEABFA29DF70017B761 /* PiPhone-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D68BDE9B89CBF0A7CCAF832F0BB53 /* PiPhone-dummy.m */; };
+		8B37FF6620D33E62920DAFC738294A1A /* PiPPictureInPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */; };
+		906587CB467DA54C809F2DE11157AC5B /* PiPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D89A0A3FEB80775F0AA18E67E2775824 /* PiPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90807CC97ACB0331CEB8F942E0ADEA9A /* PiPLoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A132B9AF1D6E7753E473D5B45D305BC /* PiPLoadingIndicatorView.m */; };
+		9D2AF76341944A1DB17B1FDDCD6A7028 /* PiPhone.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E481F329078878C159017175A774DD /* PiPhone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DD499501D7110E953F20C235D4EB360 /* PiPChevronView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC63FECE3374CCA4543D685FF4B5E97 /* PiPChevronView.m */; };
+		A27CCECB0FE4C3B4B636BF5DD16B999A /* PiPWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 690CD397B3682D77E1274B2F45433E2F /* PiPWindow.m */; };
+		AB82037C100C907CFA0DCAE76611864B /* PiPRootViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C93D8176BDCF631C746A074E45B5EA0A /* PiPRootViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AC448ED54C58D389337B2C5BDCA81EDB /* PiPWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B40769BCCAD60FFFBCAB219228A058C3 /* PiPWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AFF8AFF3D1372956165D90145DA4F83D /* PiPPlaybackControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257CB65215D22B7D7B7C3B658D3A5BB1 /* PiPPlaybackControlsViewController.m */; };
+		B5957C24FA3DA4A31598CC4F18076BC6 /* UIImage+PiPhone.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5E1E69906C40E43DF69A514B18ABCF1 /* PiPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A15640A5CBA505419C312045527DAD /* PiPPlayerViewController.m */; };
+		BBD71C238FBEB8067DC6BD5CAC2197F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E606A2817BEBF42D28C50938B714C2E /* Foundation.framework */; };
+		C281BC06FA534B6979D26B39CD9BC0FB /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A549DD3444C2EE93766788C903855F /* AVKit.framework */; };
+		C3333E027077417AB0305EE33B1DE66B /* PiPStashedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEA871AC2F0E1C4121263C792CBD76 /* PiPStashedView.m */; };
+		C3CB33348F1743118B284905BEC16ACB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E606A2817BEBF42D28C50938B714C2E /* Foundation.framework */; };
+		C48995E8788B3045A817363B3DC5C542 /* PiPPlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C92BB443E00795E67002E803479E0ABF /* PiPPlayerViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C7EB46C6FABA2D896BE5AC2E00511598 /* PiPPlaybackControlsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CA9985A806C91B9B2ACCC26847F4CE66 /* PiPPictureInPictureController.h in Headers */ = {isa = PBXBuildFile; fileRef = 142E518E7209ACFC3D2D36CB1FBC468E /* PiPPictureInPictureController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DDB461E400E4838CE9B6C7E8983840E1 /* PiPRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15917ABF8E2C6F2D8931E2A76CB758D2 /* PiPRootView.m */; };
+		E7261D120A6079CA11D0A650F8F6DA60 /* PiPPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7712CD14B5AB7848F595CD23792A4661 /* PiPPlayerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E7615C8C26DBA863A4C142F081AA921F /* PiPChevronView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3D9A119FF74FA9E9D2FE0B9FB05CE3C /* Pods-Example Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E87BED0C054ED6A9F1824249D2D3CEA /* Pods-Example Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFF4F12FF3BED8B9D148D93D0E6DB7F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AD916C04AFD076BD99DDCB53242B310;
+			remoteInfo = PiPhone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E481F329078878C159017175A774DD /* PiPhone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PiPhone.h; path = Source/PiPhone.h; sourceTree = "<group>"; };
+		011FC3A3AB7FE1B5553AD0479CDB2A44 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		099D68BDE9B89CBF0A7CCAF832F0BB53 /* PiPhone-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PiPhone-dummy.m"; sourceTree = "<group>"; };
+		0E606A2817BEBF42D28C50938B714C2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0E87BED0C054ED6A9F1824249D2D3CEA /* Pods-Example Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example Swift-umbrella.h"; sourceTree = "<group>"; };
+		10FAE31A24E116CEF39C2182246CE251 /* PiPButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPButton.m; sourceTree = "<group>"; };
+		142E518E7209ACFC3D2D36CB1FBC468E /* PiPPictureInPictureController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPictureInPictureController.h; sourceTree = "<group>"; };
+		15917ABF8E2C6F2D8931E2A76CB758D2 /* PiPRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPRootView.m; sourceTree = "<group>"; };
+		1802915DCACA24F54C33B2B4EA8C6416 /* PiPhone.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PiPhone.modulemap; sourceTree = "<group>"; };
+		22CEA871AC2F0E1C4121263C792CBD76 /* PiPStashedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPStashedView.m; sourceTree = "<group>"; };
+		257CB65215D22B7D7B7C3B658D3A5BB1 /* PiPPlaybackControlsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlaybackControlsViewController.m; sourceTree = "<group>"; };
+		28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPLoadingIndicatorView.h; sourceTree = "<group>"; };
+		2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPRuntime.m; sourceTree = "<group>"; };
+		3042ABB50792E5328452915DDDA6DB79 /* Pods-Example Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example Swift-dummy.m"; sourceTree = "<group>"; };
+		3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PiPhone.m"; sourceTree = "<group>"; };
+		40DE73B253A4C947EFBFED74F31CF03B /* Pods-Example Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example Swift.modulemap"; sourceTree = "<group>"; };
+		41238B652DB3304215E5633BBF3FCA75 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPManager.m; sourceTree = "<group>"; };
+		512CE8DFBFAD5120762E96DF9DF68891 /* PiPhone-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PiPhone-umbrella.h"; sourceTree = "<group>"; };
+		62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlaybackControlsViewController.h; sourceTree = "<group>"; };
+		645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerLayerObserver.m; sourceTree = "<group>"; };
+		64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPictureInPictureController.m; sourceTree = "<group>"; };
+		658016F6CEE73CEBEA0CCDD521450E0A /* Pods-Example Swift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example Swift-acknowledgements.plist"; sourceTree = "<group>"; };
+		6591D125F52E5F699C452F095F7B9136 /* PiPhone-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PiPhone-prefix.pch"; sourceTree = "<group>"; };
+		66A549DD3444C2EE93766788C903855F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVKit.framework; sourceTree = DEVELOPER_DIR; };
+		690CD397B3682D77E1274B2F45433E2F /* PiPWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPWindow.m; sourceTree = "<group>"; };
+		6A85CE36E7EDE1F31C6F89CD26BAD027 /* Pods-Example Swift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example Swift-frameworks.sh"; sourceTree = "<group>"; };
+		6BC1A8161295151FB8E0AE223CF108A1 /* PiPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PiPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8DDCEEF96F75803277C8ED5CE2D63A /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Source/Assets.xcassets; sourceTree = "<group>"; };
+		7712CD14B5AB7848F595CD23792A4661 /* PiPPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlayerView.h; sourceTree = "<group>"; };
+		7DC63FECE3374CCA4543D685FF4B5E97 /* PiPChevronView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPChevronView.m; sourceTree = "<group>"; };
+		86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPRootView.h; sourceTree = "<group>"; };
+		8702DF45D5D148642842BB5DFA06BEF9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88FD038A862E2F805F0DE2F72EAE4F11 /* Pods-Example Swift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example Swift-resources.sh"; sourceTree = "<group>"; };
+		89C4111874CC5991F71C246C8B59C4E3 /* Pods-Example Swift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example Swift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A132B9AF1D6E7753E473D5B45D305BC /* PiPLoadingIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPLoadingIndicatorView.m; sourceTree = "<group>"; };
+		8FB0E72324A958FA3FB9A79C86DE4B40 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		997E10F7A00C74BFF44A2B28A283CB8C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+PiPhone.h"; sourceTree = "<group>"; };
+		9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPChevronView.h; sourceTree = "<group>"; };
+		A01E7D6D309B6C2D14496162EFF12B13 /* PiPhone.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PiPhone.xcconfig; sourceTree = "<group>"; };
+		A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPSafeAreaObserver.h; sourceTree = "<group>"; };
+		A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPButton.h; sourceTree = "<group>"; };
+		AD5155969506447B3245DE8D8E566634 /* PiPStashedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPStashedView.h; sourceTree = "<group>"; };
+		B40769BCCAD60FFFBCAB219228A058C3 /* PiPWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPWindow.h; sourceTree = "<group>"; };
+		B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPRootViewController.m; sourceTree = "<group>"; };
+		BEAA93B82D2FC6425B9C41C91093762F /* PiPRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPRuntime.h; sourceTree = "<group>"; };
+		C63AEAEF4374C5A92C68FF10BA6EB24C /* PiPPlayerLayerObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlayerLayerObserver.h; sourceTree = "<group>"; };
+		C92BB443E00795E67002E803479E0ABF /* PiPPlayerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlayerViewController.h; sourceTree = "<group>"; };
+		C93D8176BDCF631C746A074E45B5EA0A /* PiPRootViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPRootViewController.h; sourceTree = "<group>"; };
+		D1A15640A5CBA505419C312045527DAD /* PiPPlayerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerViewController.m; sourceTree = "<group>"; };
+		D549FF905B33F6AD4B01ED4BBAD197CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D89A0A3FEB80775F0AA18E67E2775824 /* PiPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPManager.h; sourceTree = "<group>"; };
+		DF7FD52AC4F4290C9AA185EC799701FB /* PiPhone.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = PiPhone.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPSafeAreaObserver.m; sourceTree = "<group>"; };
+		EF9945BFB0B8124C969BC966B5838D0F /* Pods-Example Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example Swift.release.xcconfig"; sourceTree = "<group>"; };
+		F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerView.m; sourceTree = "<group>"; };
+		F9677425F605C2F0A37C722EC5FF7B6C /* Pods-Example Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example Swift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		564B07194AB6E20B65D1717D9FCE8A79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBD71C238FBEB8067DC6BD5CAC2197F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BC3D7D9330CEC683D415710CE61A901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C281BC06FA534B6979D26B39CD9BC0FB /* AVKit.framework in Frameworks */,
+				C3CB33348F1743118B284905BEC16ACB /* Foundation.framework in Frameworks */,
+				31BEE7689961192FA9579D69716B1213 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5F11AA2F614C3D24B7C855DBB40AF6F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19ABB2695010209769C0DBE0E7F1E37D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D89A0A3FEB80775F0AA18E67E2775824 /* PiPManager.h */,
+				4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */,
+				142E518E7209ACFC3D2D36CB1FBC468E /* PiPPictureInPictureController.h */,
+				64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */,
+				C63AEAEF4374C5A92C68FF10BA6EB24C /* PiPPlayerLayerObserver.h */,
+				645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */,
+				BEAA93B82D2FC6425B9C41C91093762F /* PiPRuntime.h */,
+				2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */,
+				9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */,
+				3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */,
+			);
+			name = Core;
+			path = Source/Core;
+			sourceTree = "<group>";
+		};
+		1CD2AB43120E315BAA399F49033A27DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDCEEF96F75803277C8ED5CE2D63A /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1FB8AE99D1A45778CDE1B01F9142C293 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8702DF45D5D148642842BB5DFA06BEF9 /* Info.plist */,
+				1802915DCACA24F54C33B2B4EA8C6416 /* PiPhone.modulemap */,
+				A01E7D6D309B6C2D14496162EFF12B13 /* PiPhone.xcconfig */,
+				099D68BDE9B89CBF0A7CCAF832F0BB53 /* PiPhone-dummy.m */,
+				6591D125F52E5F699C452F095F7B9136 /* PiPhone-prefix.pch */,
+				512CE8DFBFAD5120762E96DF9DF68891 /* PiPhone-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PiPhone";
+			sourceTree = "<group>";
+		};
+		33012897BC8F8BFA3F8217A2441D7724 /* Pods-Example Swift */ = {
+			isa = PBXGroup;
+			children = (
+				997E10F7A00C74BFF44A2B28A283CB8C /* Info.plist */,
+				40DE73B253A4C947EFBFED74F31CF03B /* Pods-Example Swift.modulemap */,
+				89C4111874CC5991F71C246C8B59C4E3 /* Pods-Example Swift-acknowledgements.markdown */,
+				658016F6CEE73CEBEA0CCDD521450E0A /* Pods-Example Swift-acknowledgements.plist */,
+				3042ABB50792E5328452915DDDA6DB79 /* Pods-Example Swift-dummy.m */,
+				6A85CE36E7EDE1F31C6F89CD26BAD027 /* Pods-Example Swift-frameworks.sh */,
+				88FD038A862E2F805F0DE2F72EAE4F11 /* Pods-Example Swift-resources.sh */,
+				0E87BED0C054ED6A9F1824249D2D3CEA /* Pods-Example Swift-umbrella.h */,
+				F9677425F605C2F0A37C722EC5FF7B6C /* Pods-Example Swift.debug.xcconfig */,
+				EF9945BFB0B8124C969BC966B5838D0F /* Pods-Example Swift.release.xcconfig */,
+			);
+			name = "Pods-Example Swift";
+			path = "Target Support Files/Pods-Example Swift";
+			sourceTree = "<group>";
+		};
+		33AC80E721D3E58BBEE77D60883E1070 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				011FC3A3AB7FE1B5553AD0479CDB2A44 /* LICENSE */,
+				DF7FD52AC4F4290C9AA185EC799701FB /* PiPhone.podspec */,
+				8FB0E72324A958FA3FB9A79C86DE4B40 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		543B505D5082E2A5A86E3741F9B6EF13 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C696C791C44B6D4C7E51E7753C952369 /* PiPhone */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		62D9899970EDD6F1D379FC700313AB4B /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */,
+				15917ABF8E2C6F2D8931E2A76CB758D2 /* PiPRootView.m */,
+				C93D8176BDCF631C746A074E45B5EA0A /* PiPRootViewController.h */,
+				B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */,
+				A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */,
+				E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */,
+				B40769BCCAD60FFFBCAB219228A058C3 /* PiPWindow.h */,
+				690CD397B3682D77E1274B2F45433E2F /* PiPWindow.m */,
+			);
+			name = Window;
+			path = Source/Window;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				543B505D5082E2A5A86E3741F9B6EF13 /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				9D84D727D21B0C6061EF9D07FCECBCDB /* Products */,
+				8FA30847B0D261628AB19F1A8618FF8F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8FA30847B0D261628AB19F1A8618FF8F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33012897BC8F8BFA3F8217A2441D7724 /* Pods-Example Swift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		91C4EDBB8382A2BF92AD3B6E28DA271B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */,
+				10FAE31A24E116CEF39C2182246CE251 /* PiPButton.m */,
+				9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */,
+				7DC63FECE3374CCA4543D685FF4B5E97 /* PiPChevronView.m */,
+				28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */,
+				8A132B9AF1D6E7753E473D5B45D305BC /* PiPLoadingIndicatorView.m */,
+				62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */,
+				257CB65215D22B7D7B7C3B658D3A5BB1 /* PiPPlaybackControlsViewController.m */,
+				7712CD14B5AB7848F595CD23792A4661 /* PiPPlayerView.h */,
+				F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */,
+				C92BB443E00795E67002E803479E0ABF /* PiPPlayerViewController.h */,
+				D1A15640A5CBA505419C312045527DAD /* PiPPlayerViewController.m */,
+				AD5155969506447B3245DE8D8E566634 /* PiPStashedView.h */,
+				22CEA871AC2F0E1C4121263C792CBD76 /* PiPStashedView.m */,
+			);
+			name = Player;
+			path = Source/Player;
+			sourceTree = "<group>";
+		};
+		9D84D727D21B0C6061EF9D07FCECBCDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BC1A8161295151FB8E0AE223CF108A1 /* PiPhone.framework */,
+				41238B652DB3304215E5633BBF3FCA75 /* Pods_Example_Swift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5F11AA2F614C3D24B7C855DBB40AF6F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				66A549DD3444C2EE93766788C903855F /* AVKit.framework */,
+				0E606A2817BEBF42D28C50938B714C2E /* Foundation.framework */,
+				D549FF905B33F6AD4B01ED4BBAD197CC /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C696C791C44B6D4C7E51E7753C952369 /* PiPhone */ = {
+			isa = PBXGroup;
+			children = (
+				00E481F329078878C159017175A774DD /* PiPhone.h */,
+				19ABB2695010209769C0DBE0E7F1E37D /* Core */,
+				62D9899970EDD6F1D379FC700313AB4B /* Window */,
+				91C4EDBB8382A2BF92AD3B6E28DA271B /* Player */,
+				1CD2AB43120E315BAA399F49033A27DE /* Resources */,
+				33AC80E721D3E58BBEE77D60883E1070 /* Pod */,
+				1FB8AE99D1A45778CDE1B01F9142C293 /* Support Files */,
+			);
+			name = PiPhone;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7555360DFB51A89011A3132B81AC50CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3D9A119FF74FA9E9D2FE0B9FB05CE3C /* Pods-Example Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBEEA48802042B5B612293C1752DE3AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553D5E15F2845A12C8831EEAF1EF3801 /* PiPButton.h in Headers */,
+				E7615C8C26DBA863A4C142F081AA921F /* PiPChevronView.h in Headers */,
+				412CD3C0DD6E554616AF57C34FDC98CB /* PiPhone-umbrella.h in Headers */,
+				9D2AF76341944A1DB17B1FDDCD6A7028 /* PiPhone.h in Headers */,
+				64635DCE38DF99C4D734037AE26DAA69 /* PiPLoadingIndicatorView.h in Headers */,
+				906587CB467DA54C809F2DE11157AC5B /* PiPManager.h in Headers */,
+				CA9985A806C91B9B2ACCC26847F4CE66 /* PiPPictureInPictureController.h in Headers */,
+				C7EB46C6FABA2D896BE5AC2E00511598 /* PiPPlaybackControlsViewController.h in Headers */,
+				6BB8DB7854A3560ABF2461A8B5225FF2 /* PiPPlayerLayerObserver.h in Headers */,
+				E7261D120A6079CA11D0A650F8F6DA60 /* PiPPlayerView.h in Headers */,
+				C48995E8788B3045A817363B3DC5C542 /* PiPPlayerViewController.h in Headers */,
+				09E116C561C2285C2D0C58F94FF76BEB /* PiPRootView.h in Headers */,
+				AB82037C100C907CFA0DCAE76611864B /* PiPRootViewController.h in Headers */,
+				141C82A5F16C1FBB972CE9FA20C24E86 /* PiPRuntime.h in Headers */,
+				78F98EE10B5459F2C98284B86D724ED6 /* PiPSafeAreaObserver.h in Headers */,
+				2367065B0C9F99F5AABECF91393D16D8 /* PiPStashedView.h in Headers */,
+				AC448ED54C58D389337B2C5BDCA81EDB /* PiPWindow.h in Headers */,
+				B5957C24FA3DA4A31598CC4F18076BC6 /* UIImage+PiPhone.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6AD916C04AFD076BD99DDCB53242B310 /* PiPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A899791ACDF10753EC1025B7F2D9AB8E /* Build configuration list for PBXNativeTarget "PiPhone" */;
+			buildPhases = (
+				01B2F6E532ECD4C75346D029E10A8845 /* Sources */,
+				9BC3D7D9330CEC683D415710CE61A901 /* Frameworks */,
+				FBEEA48802042B5B612293C1752DE3AF /* Headers */,
+				790AA3BA336EF347A41174A82B263A97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PiPhone;
+			productName = PiPhone;
+			productReference = 6BC1A8161295151FB8E0AE223CF108A1 /* PiPhone.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D4A7FD3D0C42A484D035189990FEE8FF /* Pods-Example Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03F0DEED160410092A986860FF888882 /* Build configuration list for PBXNativeTarget "Pods-Example Swift" */;
+			buildPhases = (
+				3F4CE022632ABE7CAC61711F97357926 /* Sources */,
+				564B07194AB6E20B65D1717D9FCE8A79 /* Frameworks */,
+				7555360DFB51A89011A3132B81AC50CD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74329634B03A9FC91119B7C1B0D7B31A /* PBXTargetDependency */,
+			);
+			name = "Pods-Example Swift";
+			productName = "Pods-Example Swift";
+			productReference = 41238B652DB3304215E5633BBF3FCA75 /* Pods_Example_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 9D84D727D21B0C6061EF9D07FCECBCDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AD916C04AFD076BD99DDCB53242B310 /* PiPhone */,
+				D4A7FD3D0C42A484D035189990FEE8FF /* Pods-Example Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		790AA3BA336EF347A41174A82B263A97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC5A96C33041C250903FDD2E225566 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01B2F6E532ECD4C75346D029E10A8845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1557A241C2A75E3EBA7BEF735F995A59 /* PiPButton.m in Sources */,
+				9DD499501D7110E953F20C235D4EB360 /* PiPChevronView.m in Sources */,
+				811766FFD00E8EEABFA29DF70017B761 /* PiPhone-dummy.m in Sources */,
+				90807CC97ACB0331CEB8F942E0ADEA9A /* PiPLoadingIndicatorView.m in Sources */,
+				0BBEB56F0A6357D7281A25494FF88DC2 /* PiPManager.m in Sources */,
+				8B37FF6620D33E62920DAFC738294A1A /* PiPPictureInPictureController.m in Sources */,
+				AFF8AFF3D1372956165D90145DA4F83D /* PiPPlaybackControlsViewController.m in Sources */,
+				6B4C429FED14DCAC5C1519BA0DC5A1C5 /* PiPPlayerLayerObserver.m in Sources */,
+				638CF27BC69BC6A1FFBB304820B5BCD0 /* PiPPlayerView.m in Sources */,
+				B5E1E69906C40E43DF69A514B18ABCF1 /* PiPPlayerViewController.m in Sources */,
+				DDB461E400E4838CE9B6C7E8983840E1 /* PiPRootView.m in Sources */,
+				4A686645477C4F7799447E122E3F6E9A /* PiPRootViewController.m in Sources */,
+				052A71A63390C1397BCA8CD0C1CE24FA /* PiPRuntime.m in Sources */,
+				08C26A63A92F3276CB4952CBEB2F9F7B /* PiPSafeAreaObserver.m in Sources */,
+				C3333E027077417AB0305EE33B1DE66B /* PiPStashedView.m in Sources */,
+				A27CCECB0FE4C3B4B636BF5DD16B999A /* PiPWindow.m in Sources */,
+				13A493D263C8CBBF2D914C1638E76E30 /* UIImage+PiPhone.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4CE022632ABE7CAC61711F97357926 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50025814B7EEC3549AEF4037019793E4 /* Pods-Example Swift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74329634B03A9FC91119B7C1B0D7B31A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PiPhone;
+			target = 6AD916C04AFD076BD99DDCB53242B310 /* PiPhone */;
+			targetProxy = DFF4F12FF3BED8B9D148D93D0E6DB7F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26F954BA177A9A46FFFD4E23ED11D67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		759EE1CDC02296CF6C3C7BB1F6E4A38A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A01E7D6D309B6C2D14496162EFF12B13 /* PiPhone.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PiPhone/PiPhone-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PiPhone/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PiPhone/PiPhone.modulemap";
+				PRODUCT_NAME = PiPhone;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F9FBAE92BB5814DB93A33065347EA61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF9945BFB0B8124C969BC966B5838D0F /* Pods-Example Swift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Example Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example Swift/Pods-Example Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Example_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB44BAF884AB5483942ABA85E2A584C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A01E7D6D309B6C2D14496162EFF12B13 /* PiPhone.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PiPhone/PiPhone-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PiPhone/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PiPhone/PiPhone.modulemap";
+				PRODUCT_NAME = PiPhone;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DC7F2C941577476A4AADF6C3CC731E6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9677425F605C2F0A37C722EC5FF7B6C /* Pods-Example Swift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Example Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example Swift/Pods-Example Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Example_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03F0DEED160410092A986860FF888882 /* Build configuration list for PBXNativeTarget "Pods-Example Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC7F2C941577476A4AADF6C3CC731E6E /* Debug */,
+				8F9FBAE92BB5814DB93A33065347EA61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2BF6D6731C31DE69900B7B24E6F0445 /* Debug */,
+				26F954BA177A9A46FFFD4E23ED11D67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A899791ACDF10753EC1025B7F2D9AB8E /* Build configuration list for PBXNativeTarget "PiPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				759EE1CDC02296CF6C3C7BB1F6E4A38A /* Debug */,
+				BB44BAF884AB5483942ABA85E2A584C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

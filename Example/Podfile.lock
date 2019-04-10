@@ -1,0 +1,16 @@
+PODS:
+  - PiPhone (1.0)
+
+DEPENDENCIES:
+  - PiPhone (from `../`)
+
+EXTERNAL SOURCES:
+  PiPhone:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PiPhone: a20578950ae8465b5bb59c1c7d8af5dc08b9b638
+
+PODFILE CHECKSUM: 766561ca87fa56e5bc6ed27ab6d9fd35cc8530db
+
+COCOAPODS: 1.4.0
