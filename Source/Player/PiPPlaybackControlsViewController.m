@@ -16,6 +16,7 @@
 #define kButtonBottomPadding 11.f
 #define kDelayBeforeHidding 5.f
 #define kFadeDuration 0.2f
+#define kUpdateProgressDuration 0.1f
 
 @interface PiPPlaybackControlsViewController () <PiPPlayerLayerObserverDelegate>
 
@@ -169,6 +170,16 @@
     _currentTimeRangeConstraint.active = YES;
 }
 
+- (void)setPlaybackProgress:(CGFloat)playbackProgress animated:(BOOL)animated {
+    self.playbackProgress = playbackProgress;
+    
+    if (animated) {
+        [UIView animateWithDuration:kUpdateProgressDuration animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
 #pragma mark - Timer
 
 - (void)addTimerWithBlock:(void (^)(void))block {
@@ -259,7 +270,7 @@
 }
 
 - (void)playerLayerObserverDidChangePlaybackProgress:(PiPPlayerLayerObserver *)playerLayerObserver {
-    self.playbackProgress = playerLayerObserver.playbackProgress;
+    [self setPlaybackProgress:playerLayerObserver.playbackProgress animated:YES];
 }
 
 @end

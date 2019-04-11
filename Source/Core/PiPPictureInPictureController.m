@@ -10,10 +10,10 @@
 #import "PiPPlayerLayerObserver.h"
 #import "PiPRootViewController.h"
 #import "PiPPlayerViewController.h"
-#import "PiPManager.h"
+#import "PiPManager+Private.h"
 
 static NSString *kPictureInPicturePossible = @"pictureInPicturePossible";
-static PiPPictureInPictureController *_currentPictureInPictureController;
+static __weak PiPPictureInPictureController *_currentPictureInPictureController;
 
 @interface PiPPictureInPictureController () {
     
@@ -54,12 +54,13 @@ static PiPPictureInPictureController *_currentPictureInPictureController;
     if (self = [super init]) {
         _playerLayer = playerLayer;
         _pictureInPicturePossible = YES;
+        _allowsPictureInPicturePlayback = YES;
         _playerLayerObserver = [[PiPPlayerLayerObserver alloc] initWithPlayerLayer:playerLayer];
         [_playerLayerObserver addDelegate:self];
         
         [self updatePossibility];
         
-        [PiPManager addObserver:self forKeyPath:kPictureInPicturePossible options:0 context:nil];
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updatePossibility) name:PiPManagerDidChangePictureInPicturePossibleNotification object:nil];
     }
     
     return self;
@@ -67,21 +68,20 @@ static PiPPictureInPictureController *_currentPictureInPictureController;
 
 - (instancetype)initWithPlayerLayerView:(id)playerLayerView {
     AVPlayerLayer *playerLayer;
-    if (![playerLayerView respondsToSelector:@selector(playerLayer)] || !(playerLayer = [playerLayerView valueForKey:@"playerLayer"]))
-        return nil;
 
     if ([playerLayerView respondsToSelector:@selector(playerLayer)] &&
         (playerLayer = [playerLayerView valueForKey:@"playerLayer"]) &&
         (self = [self initWithPlayerLayer:playerLayer])) {
         _playerLayerView = playerLayerView;
+    } else {
+        return nil;
     }
     
-    return [self initWithPlayerLayer:playerLayer];
+    return self;
 }
 
 - (void)dealloc {
-    [PiPManager removeObserver:self forKeyPath:kPictureInPicturePossible];
-    NSLog(@"");
+    [self stopPictureInPicture];
 }
 
 - (void)setDelegate:(id<AVPictureInPictureControllerDelegate>)delegate {
@@ -122,14 +122,6 @@ static PiPPictureInPictureController *_currentPictureInPictureController;
     _allowsPictureInPicturePlayback = allowsPictureInPicturePlayback;
     
     [self updatePossibility];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:kPictureInPicturePossible]) {
-        [self updatePossibility];
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
 }
 
 #pragma mark - Mimic AVPictureInPictureController

@@ -21,7 +21,7 @@
 #pragma mark - Constants
 
 #define kEdgeSpacing 4.f
-#define kHiddenEdgeSpacing 50.f
+#define kHiddenEdgeSpacing 44.f
 #define kShowHideAnimationDuration 3.f //0.2f
 #define kMoveAnimationDuration 0.3f
 #define kMinWidth 180.f
@@ -85,7 +85,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 
 @interface PiPPlayerViewController () <PiPPlayerLayerObserverDelegate, UIGestureRecognizerDelegate>
 
-@property (nonatomic) PiPPictureInPictureController *pictureInPictureController;
+@property (nonatomic, weak) PiPPictureInPictureController *pictureInPictureController;
 @property (nonatomic) PiPPlayerLayerObserver *playerLayerObserver;
 @property (nonatomic) PiPPlayerViewControllerPosition position;
 @property (nonatomic) BOOL didStart;
@@ -111,6 +111,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 @property (nonatomic) CGPoint panInitialCenter;
 @property (nonatomic) UIPinchGestureRecognizer *pinchGestureRecognizer;
 
+@property (nonatomic) BOOL autoLayoutEnabled;
 @property (nonatomic) NSLayoutConstraint *topConstraint;
 @property (nonatomic) NSLayoutConstraint *bottomConstraint;
 @property (nonatomic) NSLayoutConstraint *leftConstraint;
@@ -155,7 +156,6 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     [super viewDidLoad];
     
     self.view.clipsToBounds = NO;
-    self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self setupShadowContainerView];
     [self setupPlayerView];
@@ -175,11 +175,13 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 #pragma mark - Setup
 
 - (void)setupShadowContainerView {
+    // shadowContainerView
     _shadowContainerView = [[UIView alloc] initWithFrame:CGRectInset(self.view.bounds, -kOnePixelSize, -kOnePixelSize)];
     _shadowContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _shadowContainerView.alpha = 0;
     [self.view addSubview:_shadowContainerView];
     
+    // shadowView
     UIView *shadowView = [[UIView alloc] initWithFrame:CGRectInset(_shadowContainerView.bounds, kOnePixelSize, kOnePixelSize)];
     shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     shadowView.backgroundColor = UIColor.blackColor;
@@ -190,6 +192,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     shadowView.layer.shadowColor = UIColor.blackColor.CGColor;
     [_shadowContainerView addSubview:shadowView];
     
+    // backgroundView
     UIView *backgroundView = [[UIView alloc] initWithFrame:_shadowContainerView.bounds];
     backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.25];
@@ -198,12 +201,14 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 }
 
 - (void)setupPlayerView {
+    // playerContainerView
     _playerContainerView = [[UIView alloc] initWithFrame:self.view.bounds];
     _playerContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _playerContainerView.backgroundColor = UIColor.blackColor;
     _playerContainerView.clipsToBounds = YES;
     [self.view addSubview:_playerContainerView];
     
+    // playerView
     _playerView.frame = self.view.bounds;
     _playerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _playerView.userInteractionEnabled = NO;
@@ -244,7 +249,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     [_playbackControlsViewController.closeButton addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
 }
 
-#pragma mark - Constraints
+#pragma mark - Auto Layout
 
 - (void)setupConstraints {
     PiPRootViewController *rootViewController = PiPRootViewController.shared;
@@ -262,9 +267,21 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     
     _widthConstraint = [self.view.widthAnchor constraintEqualToConstant:0];
     _heightConstraint = [self.view.heightAnchor constraintEqualToConstant:0];
+}
+
+- (void)setAutoLayoutEnabled:(BOOL)autoLayoutEnabled {
+    _autoLayoutEnabled = autoLayoutEnabled;
     
-    _widthConstraint.active = YES;
-    _heightConstraint.active = YES;
+    if (autoLayoutEnabled) {
+        self.view.translatesAutoresizingMaskIntoConstraints = NO;
+        [self setPosition:self.position];
+        
+        [NSLayoutConstraint activateConstraints:@[_widthConstraint, _heightConstraint]];
+    } else {
+        [NSLayoutConstraint deactivateConstraints:@[_leftConstraint, _leftHiddenConstraint, _rightConstraint, _rightHiddenConstraint, _topConstraint, _bottomConstraint, _widthConstraint, _heightConstraint]];
+        
+        self.view.translatesAutoresizingMaskIntoConstraints = YES;
+    }
 }
 
 #pragma mark - Gestures
@@ -577,13 +594,17 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     
     // setup sizes and position
     [self setupConstraints];
-    self.position = previousPosition;
+    _position = previousPosition;
     _scaleProgress = previousScaleProgress;
     [self updateSizes];
     
     // show PiP placeholder for __AVPlayerLayerView and AVPlayerLayer
+    id placeholderContentLayer;
     if ([_pictureInPictureController.playerLayerView respondsToSelector:kStartRoutingVideoToPictureInPicturePlayerLayerView]) {
         SuppressPerformSelectorLeakWarning([_pictureInPictureController.playerLayerView performSelector:kStartRoutingVideoToPictureInPicturePlayerLayerView]);
+        
+    } else if ([_sourcePlayerLayer respondsToSelector:kSetPlaceholderContentLayerDuringPIPMode] && (placeholderContentLayer = [PiPRuntime newPiPIndicatorLayer])) {
+        SuppressPerformSelectorLeakWarning([_sourcePlayerLayer performSelector:kSetPlaceholderContentLayerDuringPIPMode withObject:placeholderContentLayer]);
     }
     
     SuppressPerformSelectorLeakWarning([_sourcePlayerLayer performSelector:kEnterPIPModeRedirectingVideoToLayer withObject:_internalPlayerLayer]);
@@ -606,8 +627,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 }
 
 - (void)startWithFadeAnimation {
-    _internalPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    
+    self.autoLayoutEnabled = YES;
     self.view.transform = CGAffineTransformScale(self.view.transform, 0.1, 0.1);
     self.view.alpha = 0;
     
@@ -621,17 +641,13 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 
 - (void)startWithZoomAnimation:(UIWindow *)playerLayerWindow {
     CGRect playerLayerRect = [playerLayerWindow.layer convertRect:_sourcePlayerLayer.videoRect fromLayer:_sourcePlayerLayer];
-    playerLayerRect = [playerLayerWindow convertRect:playerLayerRect toWindow:PiPWindow.shared];
-    
-    self.view.frame = playerLayerRect;
-//    self.view.transform = CGAffineTransformTranslate(self.view.transform, CGRectGetMidX(playerLayerRect) - CGRectGetMidX(self.view.frame), CGRectGetMidY(playerLayerRect) - CGRectGetMidY(self.view.frame));
-//
-//    self.view.transform = CGAffineTransformScale(self.view.transform, playerLayerRect.size.width / self.view.frame.size.width, playerLayerRect.size.height / self.view.frame.size.height);
-    
+    self.view.frame = [playerLayerWindow convertRect:playerLayerRect toWindow:PiPWindow.shared];
+
     [UIView animateWithDuration:kShowHideAnimationDuration animations:^{
-        [self.view.superview layoutIfNeeded];
-//        self.view.transform = CGAffineTransformIdentity;
+        self.view.frame = [self rectForPosition:self.position];
     } completion:^(BOOL finished) {
+        self.autoLayoutEnabled = YES;
+
         [self finishStartTransition];
     }];
 }
@@ -669,7 +685,11 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
         block(YES);
     });
     
-    [_pictureInPictureController playerViewController:self restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:block];
+    [_pictureInPictureController playerViewController:self restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:^(BOOL restored) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(restored);
+        });
+    }];
 }
 
 - (void)stopImmediately:(BOOL)ignoreDidStop {
@@ -679,6 +699,10 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     _didStop = YES;
     
     [_pictureInPictureController playerViewControllerWillStopPictureInPicture:self];
+    
+    [_playbackControlsViewController.view removeFromSuperview];
+    [_loadingIndicatorView removeFromSuperview];
+    [_stashedView removeFromSuperview];
     
     // start animation transaction
     [CATransaction begin];
@@ -709,6 +733,8 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 - (void)stopWithZoomAnimation:(UIWindow *)playerLayerWindow {
     CGRect playerLayerRect = [playerLayerWindow.layer convertRect:_sourcePlayerLayer.videoRect fromLayer:_sourcePlayerLayer];
     playerLayerRect = [playerLayerWindow convertRect:playerLayerRect toWindow:PiPWindow.shared];
+    
+    self.autoLayoutEnabled = NO;
     
     [UIView animateWithDuration:kShowHideAnimationDuration animations:^{
         self.view.frame = playerLayerRect;
@@ -795,7 +821,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 
 - (CGRect)rectForPosition:(PiPPlayerViewControllerPosition)position {
     CGRect layoutGuideRect = PiPRootViewController.shared.contentLayoutGuide.layoutFrame;
-    CGSize size = self.view.frame.size;
+    CGSize size = CGSizeMake(_widthConstraint.constant, _heightConstraint.constant); //self.view.frame.size;
     
     CGFloat leftX = layoutGuideRect.origin.x + kEdgeSpacing;
     CGFloat leftHiddenX = layoutGuideRect.origin.x + kHiddenEdgeSpacing - size.width;

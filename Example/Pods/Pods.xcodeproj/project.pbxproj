@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		052A71A63390C1397BCA8CD0C1CE24FA /* PiPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */; };
-		08C26A63A92F3276CB4952CBEB2F9F7B /* PiPSafeAreaObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */; };
 		09E116C561C2285C2D0C58F94FF76BEB /* PiPRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0BBEB56F0A6357D7281A25494FF88DC2 /* PiPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */; };
 		13A493D263C8CBBF2D914C1638E76E30 /* UIImage+PiPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */; };
@@ -20,11 +19,11 @@
 		4A686645477C4F7799447E122E3F6E9A /* PiPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */; };
 		50025814B7EEC3549AEF4037019793E4 /* Pods-Example Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042ABB50792E5328452915DDDA6DB79 /* Pods-Example Swift-dummy.m */; };
 		553D5E15F2845A12C8831EEAF1EF3801 /* PiPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		60E18EBD225F5B3E0071CD7B /* PiPManager+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 60E18EBB225F5B3E0071CD7B /* PiPManager+Private.h */; };
 		638CF27BC69BC6A1FFBB304820B5BCD0 /* PiPPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */; };
 		64635DCE38DF99C4D734037AE26DAA69 /* PiPLoadingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6B4C429FED14DCAC5C1519BA0DC5A1C5 /* PiPPlayerLayerObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */; };
 		6BB8DB7854A3560ABF2461A8B5225FF2 /* PiPPlayerLayerObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C63AEAEF4374C5A92C68FF10BA6EB24C /* PiPPlayerLayerObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		78F98EE10B5459F2C98284B86D724ED6 /* PiPSafeAreaObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7CEC5A96C33041C250903FDD2E225566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8DDCEEF96F75803277C8ED5CE2D63A /* Assets.xcassets */; };
 		811766FFD00E8EEABFA29DF70017B761 /* PiPhone-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D68BDE9B89CBF0A7CCAF832F0BB53 /* PiPhone-dummy.m */; };
 		8B37FF6620D33E62920DAFC738294A1A /* PiPPictureInPictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */; };
@@ -81,6 +80,7 @@
 		41238B652DB3304215E5633BBF3FCA75 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPManager.m; sourceTree = "<group>"; };
 		512CE8DFBFAD5120762E96DF9DF68891 /* PiPhone-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PiPhone-umbrella.h"; sourceTree = "<group>"; };
+		60E18EBB225F5B3E0071CD7B /* PiPManager+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PiPManager+Private.h"; sourceTree = "<group>"; };
 		62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlaybackControlsViewController.h; sourceTree = "<group>"; };
 		645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerLayerObserver.m; sourceTree = "<group>"; };
 		64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPictureInPictureController.m; sourceTree = "<group>"; };
@@ -104,7 +104,6 @@
 		9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+PiPhone.h"; sourceTree = "<group>"; };
 		9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPChevronView.h; sourceTree = "<group>"; };
 		A01E7D6D309B6C2D14496162EFF12B13 /* PiPhone.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PiPhone.xcconfig; sourceTree = "<group>"; };
-		A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPSafeAreaObserver.h; sourceTree = "<group>"; };
 		A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPButton.h; sourceTree = "<group>"; };
 		AD5155969506447B3245DE8D8E566634 /* PiPStashedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPStashedView.h; sourceTree = "<group>"; };
 		B40769BCCAD60FFFBCAB219228A058C3 /* PiPWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPWindow.h; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 		D549FF905B33F6AD4B01ED4BBAD197CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D89A0A3FEB80775F0AA18E67E2775824 /* PiPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPManager.h; sourceTree = "<group>"; };
 		DF7FD52AC4F4290C9AA185EC799701FB /* PiPhone.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = PiPhone.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPSafeAreaObserver.m; sourceTree = "<group>"; };
 		EF9945BFB0B8124C969BC966B5838D0F /* Pods-Example Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example Swift.release.xcconfig"; sourceTree = "<group>"; };
 		F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerView.m; sourceTree = "<group>"; };
 		F9677425F605C2F0A37C722EC5FF7B6C /* Pods-Example Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,13 +155,14 @@
 			isa = PBXGroup;
 			children = (
 				D89A0A3FEB80775F0AA18E67E2775824 /* PiPManager.h */,
+				60E18EBB225F5B3E0071CD7B /* PiPManager+Private.h */,
 				4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */,
+				BEAA93B82D2FC6425B9C41C91093762F /* PiPRuntime.h */,
+				2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */,
 				142E518E7209ACFC3D2D36CB1FBC468E /* PiPPictureInPictureController.h */,
 				64F4154702102546812598CAC04635F5 /* PiPPictureInPictureController.m */,
 				C63AEAEF4374C5A92C68FF10BA6EB24C /* PiPPlayerLayerObserver.h */,
 				645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */,
-				BEAA93B82D2FC6425B9C41C91093762F /* PiPRuntime.h */,
-				2E07ADB4FD789FB7D0B729F5DF97047A /* PiPRuntime.m */,
 				9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */,
 				3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */,
 			);
@@ -232,14 +231,12 @@
 		62D9899970EDD6F1D379FC700313AB4B /* Window */ = {
 			isa = PBXGroup;
 			children = (
-				86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */,
-				15917ABF8E2C6F2D8931E2A76CB758D2 /* PiPRootView.m */,
-				C93D8176BDCF631C746A074E45B5EA0A /* PiPRootViewController.h */,
-				B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */,
-				A3F54FCF83E16384D843DA1E062A7E2D /* PiPSafeAreaObserver.h */,
-				E0800D3415E99BBF5263F1BE8EEEFE58 /* PiPSafeAreaObserver.m */,
 				B40769BCCAD60FFFBCAB219228A058C3 /* PiPWindow.h */,
 				690CD397B3682D77E1274B2F45433E2F /* PiPWindow.m */,
+				C93D8176BDCF631C746A074E45B5EA0A /* PiPRootViewController.h */,
+				B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */,
+				86BB7BC99B8B32CB3CC14E8467D576AC /* PiPRootView.h */,
+				15917ABF8E2C6F2D8931E2A76CB758D2 /* PiPRootView.m */,
 			);
 			name = Window;
 			path = Source/Window;
@@ -267,20 +264,20 @@
 		91C4EDBB8382A2BF92AD3B6E28DA271B /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */,
-				10FAE31A24E116CEF39C2182246CE251 /* PiPButton.m */,
-				9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */,
-				7DC63FECE3374CCA4543D685FF4B5E97 /* PiPChevronView.m */,
-				28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */,
-				8A132B9AF1D6E7753E473D5B45D305BC /* PiPLoadingIndicatorView.m */,
-				62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */,
-				257CB65215D22B7D7B7C3B658D3A5BB1 /* PiPPlaybackControlsViewController.m */,
-				7712CD14B5AB7848F595CD23792A4661 /* PiPPlayerView.h */,
-				F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */,
 				C92BB443E00795E67002E803479E0ABF /* PiPPlayerViewController.h */,
 				D1A15640A5CBA505419C312045527DAD /* PiPPlayerViewController.m */,
+				7712CD14B5AB7848F595CD23792A4661 /* PiPPlayerView.h */,
+				F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */,
+				62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */,
+				257CB65215D22B7D7B7C3B658D3A5BB1 /* PiPPlaybackControlsViewController.m */,
+				A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */,
+				10FAE31A24E116CEF39C2182246CE251 /* PiPButton.m */,
+				28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */,
+				8A132B9AF1D6E7753E473D5B45D305BC /* PiPLoadingIndicatorView.m */,
 				AD5155969506447B3245DE8D8E566634 /* PiPStashedView.h */,
 				22CEA871AC2F0E1C4121263C792CBD76 /* PiPStashedView.m */,
+				9DE86B64C52A52C637399F93D0747CB4 /* PiPChevronView.h */,
+				7DC63FECE3374CCA4543D685FF4B5E97 /* PiPChevronView.m */,
 			);
 			name = Player;
 			path = Source/Player;
@@ -349,8 +346,8 @@
 				09E116C561C2285C2D0C58F94FF76BEB /* PiPRootView.h in Headers */,
 				AB82037C100C907CFA0DCAE76611864B /* PiPRootViewController.h in Headers */,
 				141C82A5F16C1FBB972CE9FA20C24E86 /* PiPRuntime.h in Headers */,
-				78F98EE10B5459F2C98284B86D724ED6 /* PiPSafeAreaObserver.h in Headers */,
 				2367065B0C9F99F5AABECF91393D16D8 /* PiPStashedView.h in Headers */,
+				60E18EBD225F5B3E0071CD7B /* PiPManager+Private.h in Headers */,
 				AC448ED54C58D389337B2C5BDCA81EDB /* PiPWindow.h in Headers */,
 				B5957C24FA3DA4A31598CC4F18076BC6 /* UIImage+PiPhone.h in Headers */,
 			);
@@ -451,7 +448,6 @@
 				DDB461E400E4838CE9B6C7E8983840E1 /* PiPRootView.m in Sources */,
 				4A686645477C4F7799447E122E3F6E9A /* PiPRootViewController.m in Sources */,
 				052A71A63390C1397BCA8CD0C1CE24FA /* PiPRuntime.m in Sources */,
-				08C26A63A92F3276CB4952CBEB2F9F7B /* PiPSafeAreaObserver.m in Sources */,
 				C3333E027077417AB0305EE33B1DE66B /* PiPStashedView.m in Sources */,
 				A27CCECB0FE4C3B4B636BF5DD16B999A /* PiPWindow.m in Sources */,
 				13A493D263C8CBBF2D914C1638E76E30 /* UIImage+PiPhone.m in Sources */,

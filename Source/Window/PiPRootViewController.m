@@ -56,7 +56,7 @@
     
     [self updateContentInsetsWithTraitCollection:newCollection];
     
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
         [self.view layoutIfNeeded];
     } completion:nil];
 }
@@ -77,8 +77,8 @@
         _rightSafeAreaConstraint = [_contentLayoutGuide.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
     }
     
-    _topEdgeConstraint = [_contentLayoutGuide.topAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-    _bottomEdgeConstraint = [_contentLayoutGuide.bottomAnchor constraintEqualToAnchor:self.view.topAnchor];
+    _topEdgeConstraint = [_contentLayoutGuide.topAnchor constraintEqualToAnchor:self.view.topAnchor];
+    _bottomEdgeConstraint = [_contentLayoutGuide.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
     _leftEdgeConstraint = [_contentLayoutGuide.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
     _rightEdgeConstraint = [_contentLayoutGuide.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
 }
@@ -87,32 +87,16 @@
     _additionalContentInsets = additionalContentInsets;
     
     [self updateContentInsetsWithTraitCollection:self.traitCollection];
-}
-
-- (void)setAdditionalContentInsets:(UIEdgeInsets)additionalContentInsets animated:(BOOL)flag {
-    self.additionalContentInsets = additionalContentInsets;
     
-    if (flag) {
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+    [self.view layoutIfNeeded];
 }
 
 - (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior {
     _contentInsetAdjustmentBehavior = contentInsetAdjustmentBehavior;
     
     [self updateContentInsetsWithTraitCollection:self.traitCollection];
-}
-
-- (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior animated:(BOOL)flag {
-    self.contentInsetAdjustmentBehavior = contentInsetAdjustmentBehavior;
     
-    if (flag) {
-        [UIView animateWithDuration:kAnimationDuration animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+    [self.view layoutIfNeeded];
 }
 
 - (void)updateContentInsetsWithTraitCollection:(UITraitCollection *)traitCollection {

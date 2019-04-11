@@ -21,10 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) PiPManagerContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior;
 @property (nonatomic, readonly) UILayoutGuide *contentLayoutGuide;
 
-- (void)setAdditionalContentInsets:(UIEdgeInsets)additionalContentInsets animated:(BOOL)flag;
-
-- (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior animated:(BOOL)flag;
-
 @end
 
 NS_ASSUME_NONNULL_END

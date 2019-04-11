@@ -40,7 +40,7 @@
     _leftChevronView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_leftChevronView];
     
-    [_leftChevronView.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:18].active = YES;
+    [_leftChevronView.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:15].active = YES;
     [_leftChevronView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
     
     // rightChevronView
@@ -48,7 +48,7 @@
     _rightChevronView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_rightChevronView];
     
-    [_rightChevronView.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-18].active = YES;
+    [_rightChevronView.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-15].active = YES;
     [_rightChevronView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
     
     self.poition = PiPStashedViewPositionLeft;

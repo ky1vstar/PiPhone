@@ -6,9 +6,11 @@
 //  Copyright © 2019 KY1VSTAR. All rights reserved.
 //
 
-#import "PiPManager.h"
+#import "PiPManager+Private.h"
 #import "PiPRootViewController.h"
 
+NSNotificationName const PiPManagerDidChangePictureInPicturePossibleNotification = @"PiPManagerDidChangePictureInPicturePossibleNotification";
+static BOOL _settedUp;
 static BOOL _pictureInPicturePossible;
 
 @interface PiPManager ()
@@ -21,6 +23,16 @@ static BOOL _pictureInPicturePossible;
     _pictureInPicturePossible = YES;
 }
 
+#pragma mark - settedUp
+
++ (BOOL)settedUp {
+    return _settedUp;
+}
+
++ (void)setSettedUp:(BOOL)settedUp {
+    _settedUp = settedUp;
+}
+
 #pragma mark - pictureInPicturePossible
 
 + (BOOL)pictureInPicturePossible {
@@ -29,6 +41,8 @@ static BOOL _pictureInPicturePossible;
 
 + (void)setPictureInPicturePossible:(BOOL)pictureInPicturePossible {
     _pictureInPicturePossible = pictureInPicturePossible;
+    
+    [NSNotificationCenter.defaultCenter postNotificationName:PiPManagerDidChangePictureInPicturePossibleNotification object:nil];
 }
 
 #pragma mark - additionalContentInsets
@@ -41,10 +55,6 @@ static BOOL _pictureInPicturePossible;
     PiPRootViewController.shared.additionalContentInsets = additionalContentInsets;
 }
 
-+ (void)setAdditionalContentInsets:(UIEdgeInsets)additionalContentInsets animated:(BOOL)flag {
-    [PiPRootViewController.shared setAdditionalContentInsets:additionalContentInsets animated:flag];
-}
-
 #pragma mark - contentInsetAdjustmentBehavior
 
 + (PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior {
@@ -53,10 +63,6 @@ static BOOL _pictureInPicturePossible;
 
 + (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior {
     PiPRootViewController.shared.contentInsetAdjustmentBehavior = contentInsetAdjustmentBehavior;
-}
-
-+ (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior animated:(BOOL)flag {
-    [PiPRootViewController.shared setContentInsetAdjustmentBehavior:contentInsetAdjustmentBehavior animated:flag];
 }
 
 @end

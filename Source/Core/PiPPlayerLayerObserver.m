@@ -163,7 +163,7 @@ static NSString *kRateKeyPath = @"player.rate";
 
 - (void)addObserversForPlayer:(AVPlayer *)player {
     __weak PiPPlayerLayerObserver *weakSelf = self;
-    _playerTimeObserver = [player addPeriodicTimeObserverForInterval:CMTimeMake(1, 4) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    _playerTimeObserver = [player addPeriodicTimeObserverForInterval:CMTimeMake(1, 10) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         [weakSelf updatePlaybackProgressWithTime:time];
     }];
     
