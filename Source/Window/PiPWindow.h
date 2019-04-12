@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, nonatomic, readonly) PiPWindow *shared;
 
+- (void)startAnimating;
+- (void)stopAnimating;
+
 @end
 
 NS_ASSUME_NONNULL_END

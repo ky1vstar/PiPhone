@@ -9,6 +9,12 @@
 #import "PiPWindow.h"
 #import "PiPRootViewController.h"
 
+@interface PiPWindow ()
+
+@property (nonatomic) NSInteger animationCount;
+
+@end
+
 @implementation PiPWindow
 
 + (PiPWindow *)shared {
@@ -35,8 +41,16 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *hitView = [super hitTest:point withEvent:event];
-    
-    return hitView == self ? nil : hitView;
+
+    return hitView == self && _animationCount == 0 ? nil : hitView;
+}
+
+- (void)startAnimating {
+    _animationCount++;
+}
+
+- (void)stopAnimating {
+    _animationCount = MAX(0, _animationCount - 1);
 }
 
 #pragma mark - Private API overrides for status bar appearance

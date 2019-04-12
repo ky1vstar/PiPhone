@@ -19,6 +19,8 @@
 		4A686645477C4F7799447E122E3F6E9A /* PiPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F01FACC07A39C5CA724375439BC09 /* PiPRootViewController.m */; };
 		50025814B7EEC3549AEF4037019793E4 /* Pods-Example Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042ABB50792E5328452915DDDA6DB79 /* Pods-Example Swift-dummy.m */; };
 		553D5E15F2845A12C8831EEAF1EF3801 /* PiPButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D1B409E06CB58D72F97802D4F35DD6 /* PiPButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		60443E152260B158006DA4ED /* NSObject+PiPhone.h in Headers */ = {isa = PBXBuildFile; fileRef = 60443E132260B158006DA4ED /* NSObject+PiPhone.h */; };
+		60443E162260B158006DA4ED /* NSObject+PiPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 60443E142260B158006DA4ED /* NSObject+PiPhone.m */; };
 		60E18EBD225F5B3E0071CD7B /* PiPManager+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 60E18EBB225F5B3E0071CD7B /* PiPManager+Private.h */; };
 		638CF27BC69BC6A1FFBB304820B5BCD0 /* PiPPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6ACCCF2596D96883E0F14FD74DB235D /* PiPPlayerView.m */; };
 		64635DCE38DF99C4D734037AE26DAA69 /* PiPLoadingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 28478E65F474D4D97EEE9B0D3471971C /* PiPLoadingIndicatorView.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -80,6 +82,8 @@
 		41238B652DB3304215E5633BBF3FCA75 /* Pods_Example_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F91DC08978CBF660A1EAB4D63BE2C27 /* PiPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPManager.m; sourceTree = "<group>"; };
 		512CE8DFBFAD5120762E96DF9DF68891 /* PiPhone-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PiPhone-umbrella.h"; sourceTree = "<group>"; };
+		60443E132260B158006DA4ED /* NSObject+PiPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PiPhone.h"; sourceTree = "<group>"; };
+		60443E142260B158006DA4ED /* NSObject+PiPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PiPhone.m"; sourceTree = "<group>"; };
 		60E18EBB225F5B3E0071CD7B /* PiPManager+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PiPManager+Private.h"; sourceTree = "<group>"; };
 		62E9B94E8C000CB849562224BB3939B9 /* PiPPlaybackControlsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PiPPlaybackControlsViewController.h; sourceTree = "<group>"; };
 		645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PiPPlayerLayerObserver.m; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				645B728FF155CA199A40F25A49738161 /* PiPPlayerLayerObserver.m */,
 				9BE5285C74F0726298B607B10F567934 /* UIImage+PiPhone.h */,
 				3B88337703A8DD50037B1F2E28FF3943 /* UIImage+PiPhone.m */,
+				60443E132260B158006DA4ED /* NSObject+PiPhone.h */,
+				60443E142260B158006DA4ED /* NSObject+PiPhone.m */,
 			);
 			name = Core;
 			path = Source/Core;
@@ -348,6 +354,7 @@
 				141C82A5F16C1FBB972CE9FA20C24E86 /* PiPRuntime.h in Headers */,
 				2367065B0C9F99F5AABECF91393D16D8 /* PiPStashedView.h in Headers */,
 				60E18EBD225F5B3E0071CD7B /* PiPManager+Private.h in Headers */,
+				60443E152260B158006DA4ED /* NSObject+PiPhone.h in Headers */,
 				AC448ED54C58D389337B2C5BDCA81EDB /* PiPWindow.h in Headers */,
 				B5957C24FA3DA4A31598CC4F18076BC6 /* UIImage+PiPhone.h in Headers */,
 			);
@@ -442,6 +449,7 @@
 				0BBEB56F0A6357D7281A25494FF88DC2 /* PiPManager.m in Sources */,
 				8B37FF6620D33E62920DAFC738294A1A /* PiPPictureInPictureController.m in Sources */,
 				AFF8AFF3D1372956165D90145DA4F83D /* PiPPlaybackControlsViewController.m in Sources */,
+				60443E162260B158006DA4ED /* NSObject+PiPhone.m in Sources */,
 				6B4C429FED14DCAC5C1519BA0DC5A1C5 /* PiPPlayerLayerObserver.m in Sources */,
 				638CF27BC69BC6A1FFBB304820B5BCD0 /* PiPPlayerView.m in Sources */,
 				B5E1E69906C40E43DF69A514B18ABCF1 /* PiPPlayerViewController.m in Sources */,

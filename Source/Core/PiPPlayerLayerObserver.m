@@ -7,6 +7,7 @@
 //
 
 #import "PiPPlayerLayerObserver.h"
+#import "NSObject+PiPhone.h"
 
 static NSString *kPlayerKeyPath = @"player";
 static NSString *kCurrentItemKeyPath = @"player.currentItem";
@@ -128,22 +129,22 @@ static NSString *kRateKeyPath = @"player.rate";
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:kPlayerKeyPath]) {
-        self.player = change[NSKeyValueChangeNewKey];
+        self.player = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         
     } else if ([keyPath isEqualToString:kCurrentItemKeyPath]) {
-        _currentPlayerItem = change[NSKeyValueChangeNewKey];
+        _currentPlayerItem = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         
         [self updateShouldDismiss];
         
     } else if ([keyPath isEqualToString:kReadyForDisplayKeyPath]) {
-        NSNumber *number = change[NSKeyValueChangeNewKey];
+        NSNumber *number = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         _readyForDisplay = number.boolValue;
         
         [self updateValidity];
         [self updateInitializing];
         
     } else if ([keyPath isEqualToString:kStatusKeyPath]) {
-        NSNumber *number = change[NSKeyValueChangeNewKey];
+        NSNumber *number = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         AVPlayerItemStatus status = number.integerValue;
         _playerItemStatus = status;
         
@@ -152,11 +153,11 @@ static NSString *kRateKeyPath = @"player.rate";
         [self updateInitializing];
         
     } else if ([keyPath isEqualToString:kPresentationSizeKeyPath]) {
-        NSValue *value = change[NSKeyValueChangeNewKey];
+        NSValue *value = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         self.presentationSize = value.CGSizeValue;
         
     } else if ([keyPath isEqualToString:kRateKeyPath]) {
-        NSNumber *number = change[NSKeyValueChangeNewKey];
+        NSNumber *number = [change[NSKeyValueChangeNewKey] ifNullThenNil];
         self.playing = number.floatValue > 0;
     }
 }

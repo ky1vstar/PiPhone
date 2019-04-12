@@ -22,9 +22,10 @@
 
 #define kEdgeSpacing 4.f
 #define kHiddenEdgeSpacing 44.f
-#define kShowHideAnimationDuration 3.f //0.2f
+#define kShowHideAnimationDuration 0.3f
 #define kMoveAnimationDuration 0.3f
 #define kMinWidth 180.f
+#define kMinHeight 160.f
 #define kMaxSideSize 475.f
 #define kOnePixelSize 1.0 / UIScreen.mainScreen.scale
 
@@ -110,6 +111,8 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) CGPoint panInitialCenter;
 @property (nonatomic) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (nonatomic) CGFloat pinchMinScale;
+@property (nonatomic) CGFloat pinchMaxScale;
 
 @property (nonatomic) BOOL autoLayoutEnabled;
 @property (nonatomic) NSLayoutConstraint *topConstraint;
@@ -126,7 +129,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 @implementation PiPPlayerViewController
 
 + (void)initialize {
-    kDecelerationRate = [UIScrollView new].decelerationRate;
+    kDecelerationRate = [UIScrollView new].decelerationRate / 1.001;
 }
 
 - (instancetype)initWithPictureInPictureController:(PiPPictureInPictureController *)pictureInPictureController {
@@ -312,7 +315,7 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
         return;
     }
     
-    if (_stashedView.hidden) {
+    if (!_stashedView.visible) {
         [_playbackControlsViewController toggleVisibility];
         return;
     }
@@ -381,38 +384,31 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 - (void)handlePinch:(UIPinchGestureRecognizer *)gesture {
     if (gesture.state == UIGestureRecognizerStateBegan) {
         _playbackControlsViewController.view.hidden = YES;
+        
+        _pinchMinScale = _minSize.width / self.view.frame.size.width;
+        _pinchMaxScale = _maxSize.width / self.view.frame.size.width;
     }
     
     if (gesture.state != UIGestureRecognizerStateCancelled && gesture.state != UIGestureRecognizerStateFailed) {
         // https://github.com/PaulSolt/LimitPinchGestureZoom
-        // Use the x or y scale, they should be the same for typical zooming (non-skewing)
         float currentScale = [[gesture.view.layer valueForKeyPath:@"transform.scale.x"] floatValue];
-        
-        // Variables to adjust the max/min values of zoom
-        float minScale = 1.0;
-        float maxScale = 2.0;
         float zoomSpeed = .5;
-        
         float deltaScale = gesture.scale;
         
-        // You need to translate the zoom to 0 (origin) so that you
-        // can multiply a speed factor and then translate back to "zoomSpace" around 1
         deltaScale = ((deltaScale - 1) * zoomSpeed) + 1;
         
         // Limit to min/max size (i.e maxScale = 2, current scale = 2, 2/2 = 1.0)
         //  A deltaScale is ~0.99 for decreasing or ~1.01 for increasing
         //  A deltaScale of 1.0 will maintain the zoom size
-        deltaScale = MIN(deltaScale, maxScale / currentScale);
-        deltaScale = MAX(deltaScale, minScale / currentScale);
+        deltaScale = MIN(deltaScale, _pinchMaxScale / currentScale);
+        deltaScale = MAX(deltaScale, _pinchMinScale / currentScale);
         
         CGAffineTransform zoomTransform = CGAffineTransformScale(gesture.view.transform, deltaScale, deltaScale);
         gesture.view.transform = zoomTransform;
         
         // Reset to 1 for scale delta's
-        //  Note: not 0, or we won't see a size: 0 * width = 0
+        // Note: not 0, or we won't see a size: 0 * width = 0
         gesture.scale = 1;
-        
-//        self.view.transform = CGAffineTransformScale(self.view.transform, gesture.scale, gesture.scale);
         
         if (gesture.state == UIGestureRecognizerStateEnded) {
             self.scaleProgress = [self scaleProgressForWidth:self.view.frame.size.width];
@@ -465,12 +461,12 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     CGRect visibleRectInLayoutGuide = CGRectIntersection(layoutGuideRect, self.view.frame);
     
     if (visibleRectInLayoutGuide.size.width < self.view.frame.size.width / 2) {
-        _stashedView.hidden = NO;
+        _stashedView.visible = YES;
     } else if (visibleRectInLayoutGuide.size.width > self.view.frame.size.width * 2 / 3) {
-        _stashedView.hidden = YES;
+        _stashedView.visible = NO;
     }
     
-    if (!_stashedView.hidden) {
+    if (_stashedView.visible) {
         if (self.view.frame.origin.x <= layoutGuideRect.origin.x) {
             _stashedView.poition = PiPStashedViewPositionRight;
         } else {
@@ -478,13 +474,12 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
         }
     }
     
-    // FIXME
     if (_playerLayerObserver.initializing) {
-        _loadingIndicatorView.hidden = !_stashedView.hidden;
-        _playbackControlsViewController.viewIfLoaded.hidden = YES;
+        _loadingIndicatorView.hidden = NO;
+        _playbackControlsViewController.hidden = YES;
     } else {
         _loadingIndicatorView.hidden = YES;
-        _playbackControlsViewController.viewIfLoaded.hidden = !_stashedView.hidden;
+        _playbackControlsViewController.hidden = _stashedView.visible;
     }
 }
 
@@ -556,13 +551,21 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
         return;
     }
     
-    CGSize maxAvailableSize = CGSizeMake(MIN(kMaxSideSize, contentSize.width - kHiddenEdgeSpacing - kEdgeSpacing),
-                                         MIN(kMaxSideSize, contentSize.height - kHiddenEdgeSpacing - kEdgeSpacing));
+    CGSize maxAvailableSize = CGSizeMake(MIN(kMaxSideSize, contentSize.width - kHiddenEdgeSpacing / 2),
+                                         MIN(kMaxSideSize, contentSize.height - kHiddenEdgeSpacing / 2));
     
-    CGFloat minHeight = (kMinWidth / presentationSize.width) * presentationSize.height;
-    _minSize = CGSizeMake(kMinWidth, MIN(maxAvailableSize.height, minHeight));
+    if (presentationSize.width > presentationSize.height) {
+        CGFloat minWidth = (kMinHeight / presentationSize.height) * presentationSize.width;
+        _minSize = CGSizeMake(MIN(maxAvailableSize.width, minWidth), kMinHeight);
+    } else {
+        CGFloat minHeight = (kMinWidth / presentationSize.width) * presentationSize.height;
+        _minSize = CGSizeMake(kMinWidth, MIN(maxAvailableSize.height, minHeight));
+    }
     
     _maxSize = AVMakeRectWithAspectRatioInsideRect(_minSize, CGRectMake(0, 0, maxAvailableSize.width, maxAvailableSize.height)).size;
+    
+    // if maxSize nearly equals minSize disable pinch gesture
+    _pinchGestureRecognizer.enabled = ABS(_maxSize.width - _minSize.width) > 5;
     
     self.scaleProgress = _scaleProgress;
 }
@@ -584,6 +587,9 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     _didStart = YES;
     
     [_pictureInPictureController playerViewControllerWillStartPictureInPicture:self];
+    
+    // disable user interaction
+    [PiPWindow.shared startAnimating];
     
     // add itself to PiPRootViewController
     PiPRootViewController *rootViewController = PiPRootViewController.shared;
@@ -653,8 +659,14 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 }
 
 - (void)finishStartTransition {
-    [self setupPlaybackControlsViewController];
+    if (!_didStop) {
+        [self setupPlaybackControlsViewController];
+    }
+    
     [self.pictureInPictureController playerViewControllerDidStartPictureInPicture:self];
+    
+    // enable user interaction
+    [PiPWindow.shared stopAnimating];
 }
 
 #pragma mark - Stop
@@ -668,6 +680,9 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
         return;
     }
     _didStop = YES;
+    
+    // disable user interaction
+    [PiPWindow.shared startAnimating];
     
     __block BOOL shouldExecute = YES;
     
@@ -698,9 +713,15 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     }
     _didStop = YES;
     
+    // disable user interaction
+    if (!ignoreDidStop) {
+        [PiPWindow.shared startAnimating];
+    }
+    
     [_pictureInPictureController playerViewControllerWillStopPictureInPicture:self];
     
-    [_playbackControlsViewController.view removeFromSuperview];
+    // hide controls
+    [_playbackControlsViewController.viewIfLoaded removeFromSuperview];
     [_loadingIndicatorView removeFromSuperview];
     [_stashedView removeFromSuperview];
     
@@ -756,6 +777,9 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
     [self removeFromParentViewController];
     
     [_pictureInPictureController playerViewControllerDidStopPictureInPicture:self];
+    
+    // enable user interaction
+    [PiPWindow.shared stopAnimating];
 }
 
 #pragma mark - Helper

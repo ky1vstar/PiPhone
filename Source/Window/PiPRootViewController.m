@@ -83,12 +83,21 @@
     _rightEdgeConstraint = [_contentLayoutGuide.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
 }
 
+- (void)layoutSubviews {
+    [self.view layoutIfNeeded];
+    
+    for (UIView *subview in self.view.subviews) {
+        [subview setNeedsLayout];
+        [subview layoutIfNeeded];
+    }
+}
+
 - (void)setAdditionalContentInsets:(UIEdgeInsets)additionalContentInsets {
     _additionalContentInsets = additionalContentInsets;
     
     [self updateContentInsetsWithTraitCollection:self.traitCollection];
     
-    [self.view layoutIfNeeded];
+    [self layoutSubviews];
 }
 
 - (void)setContentInsetAdjustmentBehavior:(PiPManagerContentInsetAdjustmentBehavior)contentInsetAdjustmentBehavior {
@@ -96,7 +105,7 @@
     
     [self updateContentInsetsWithTraitCollection:self.traitCollection];
     
-    [self.view layoutIfNeeded];
+    [self layoutSubviews];
 }
 
 - (void)updateContentInsetsWithTraitCollection:(UITraitCollection *)traitCollection {

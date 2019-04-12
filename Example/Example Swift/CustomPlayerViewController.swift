@@ -34,7 +34,6 @@ class CustomPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        playerView.backgroundColor = .clear
         playerView.playerLayer.player = player
         
         setupPictureInPicture()

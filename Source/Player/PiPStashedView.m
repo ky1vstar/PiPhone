@@ -9,6 +9,8 @@
 #import "PiPStashedView.h"
 #import "PiPChevronView.h"
 
+#define kAnimationDuration 0.3f
+
 @interface PiPStashedView ()
 
 @property (nonatomic) PiPChevronView *leftChevronView;
@@ -27,7 +29,7 @@
 }
 
 - (void)setup {
-    self.hidden = YES;
+    self.alpha = 0;
     
     // visualEffectView
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
@@ -52,6 +54,17 @@
     [_rightChevronView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
     
     self.poition = PiPStashedViewPositionLeft;
+}
+
+- (void)setVisible:(BOOL)visible {
+    if (_visible == visible) {
+        return;
+    }
+    _visible = visible;
+    
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        self.alpha = visible ? 1 : 0;
+    }];
 }
 
 - (void)setPoition:(PiPStashedViewPosition)poition {

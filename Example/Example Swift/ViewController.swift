@@ -12,15 +12,15 @@ import PiPhone
 
 class ViewController: UIViewController {
     
-    let urls = ["https://video.twimg.com/ext_tw_video/1110679043915935745/pu/vid/720x1280/6OeRxCMr3tYaDNLB.mp4?tag=8",
-                "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8",
-                "http://example.com"] // force AVPlayer to fail
+    let urls = ["https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
+                "https://video.twimg.com/ext_tw_video/1110679043915935745/pu/vid/720x1280/6OeRxCMr3tYaDNLB.mp4?tag=8",
+                "http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4"] // unsupported video
     
     let adjustmentBehaviors = [(behavior: PiPManagerContentInsetAdjustmentBehavior.navigationBar, title: "Navigation bar"),
                                (.tabBar, "Tab bar"),
                                (.navigationAndTabBars, "Navigation and Tab bars"),
                                (.safeArea, "Safe area"),
-                               (.none, "Never")]
+                               (.none, "None")]
     
     var topPresentedViewController: UIViewController {
         var viewController: UIViewController = self
@@ -120,9 +120,9 @@ extension ViewController: AVPlayerViewControllerDelegate {
         completionHandler(true)
     }
     
-    func playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart(_ playerViewController: AVPlayerViewController) -> Bool {
-        return false
-    }
+//    func playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart(_ playerViewController: AVPlayerViewController) -> Bool {
+//        return false
+//    }
     
 }
 

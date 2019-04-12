@@ -60,12 +60,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.hidden = _hidden;
 
     [self setupConstraints];
     [self setupViews];
     
     [_playerLayerObserver addDelegate:self];
     [self updateVisibility];
+}
+
+- (void)setHidden:(BOOL)hidden {
+    _hidden = hidden;
+    
+    self.viewIfLoaded.hidden = hidden;
 }
 
 #pragma mark - Constraints

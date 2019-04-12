@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) PiPStashedViewPosition poition;
 @property (nonatomic) PiPStashedViewChevronState chevronState;
+@property (nonatomic) BOOL visible;
 
 - (void)setChevronState:(PiPStashedViewChevronState)chevronState animated:(BOOL)flag;
 

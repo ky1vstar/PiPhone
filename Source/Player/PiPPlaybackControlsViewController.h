@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PiPPlaybackControlsViewController : UIViewController
 
 @property (nonatomic, readonly) PiPPlayerLayerObserver *playerLayerObserver;
+@property (nonatomic) BOOL hidden;
 
 @property (nonatomic, readonly) UIControl *restoreButton;
 @property (nonatomic, readonly) UIControl *playPauseButton;
