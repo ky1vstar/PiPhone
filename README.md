@@ -9,7 +9,7 @@ PiPhone is a framework that drops in picture-in-picture support (user-initiated 
 ## Overview
 
 <p align="center">
-<img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/PiPhone.gif?raw=true">
+  <img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/PiPhone.gif?raw=true">
 </p>
 
 ## Features
@@ -47,19 +47,32 @@ Make sure to import the framework header: `#import <PiPhone/PiPhone.h>` for Obje
 Default `AVPictureInPictureController` behavior is to find the topmost `UINavigationController`'s bar, `UITabBarController`'s bar, `safeAreaInsets`, etc and determine where to place overlay video based on this metrics. Since imitation of this behavior turned out to be complicated and tricky process, it've been decided to control overlay video position based on predefined configurations.
 
 **PiPManagerContentInsetAdjustmentNavigationBar**
+
 Includes safe area insets and additional 44dp (32dp on landscape) inset from top safe area.
 
+<img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/NavigationBar.PNG?raw=true">
+
 **PiPManagerContentInsetAdjustmentTabBar**
+
 Includes safe area insets and additional 49dp (32dp on landscape in iOS 11 and above) inset from bottom safe area.
 
+<img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/TabBar.PNG?raw=true">
+
 **PiPManagerContentInsetAdjustmentNavigationAndTabBars**
+
 Includes both `PiPManagerContentInsetAdjustmentNavigationBar` and `PiPManagerContentInsetAdjustmentTabBar`.
 
 **PiPManagerContentInsetAdjustmentSafeArea**
+
 Includes safe area insets.
 
+<img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/SafeArea.PNG?raw=true">
+
 **PiPManagerContentInsetAdjustmentNone**
+
 Overlay video is pinned to screen edges.
+
+<img width="281" height="500" src="https://github.com/ky1vstar/PiPhone/blob/master/Demonstration/None.PNG?raw=true">
 
 This behavior can be changed via `PiPManager`'s `contentInsetAdjustmentBehavior` property.
 
@@ -69,7 +82,7 @@ PiPManager.contentInsetAdjustmentBehavior = PiPManagerContentInsetAdjustmentNavi
 
 // animated
 [UIView animateWithDuration:0.25 animations:^{
-PiPManager.contentInsetAdjustmentBehavior = PiPManagerContentInsetAdjustmentNavigationAndTabBars;
+	PiPManager.contentInsetAdjustmentBehavior = PiPManagerContentInsetAdjustmentNavigationAndTabBars;
 }];
 ```
 
@@ -79,7 +92,7 @@ PiPManager.contentInsetAdjustmentBehavior = .navigationAndTabBars
 
 // animated
 UIView.animate(withDuration: 0.25) {
-PiPManager.contentInsetAdjustmentBehavior = .navigationAndTabBars
+	PiPManager.contentInsetAdjustmentBehavior = .navigationAndTabBars
 }
 ```
 
@@ -93,7 +106,7 @@ PiPManager.additionalContentInsets = UIEdgeInsetsMake(20, 10, 20, 10);
 
 // animated
 [UIView animateWithDuration:0.25 animations:^{
-PiPManager.additionalContentInsets = UIEdgeInsetsMake(20, 10, 20, 10);
+	PiPManager.additionalContentInsets = UIEdgeInsetsMake(20, 10, 20, 10);
 }];
 ```
 
@@ -103,13 +116,14 @@ PiPManager.additionalContentInsets.top = 20
 
 // animated
 UIView.animate(withDuration: 0.25) {
-PiPManager.additionalContentInsets.top = 20
+	PiPManager.additionalContentInsets.top = 20
 }
 ```
 
 ### Disable picture-in-picture
 
 You can temporarily disable picture-in-picture mode causing `AVPictureInPictureController`'s `isPictureInPicturePossible` property to be `false`.
+Note: this will only have affect on iPhone.
 
 **Objective-C**
 ```objectivec
