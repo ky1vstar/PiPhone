@@ -1,8 +1,8 @@
 # PiPhone
 
-[![Version](https://img.shields.io/cocoapods/v/CustomBrowserKit.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
-[![License](https://img.shields.io/cocoapods/l/CustomBrowserKit.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
-[![Platform](https://img.shields.io/cocoapods/p/CustomBrowserKit.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
+[![Version](https://img.shields.io/cocoapods/v/PiPhone.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
+[![License](https://img.shields.io/cocoapods/l/PiPhone.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
+[![Platform](https://img.shields.io/cocoapods/p/PiPhone.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
 
 PiPhone is a framework that drops in picture-in-picture support (user-initiated playback of video in a floating, resizable window) for iPhone devices. It's designed to mimic default `AVPictureInPictureController` behavior as much as possible.
 
@@ -14,7 +14,7 @@ PiPhone is a framework that drops in picture-in-picture support (user-initiated 
 
 ## Features
 - [x] Picture in picture support for devices that doesn't support it by default
-- [x] No additional work required if `AVPictureInPictureController` have been already configured
+- [x] No additional work required if `AVPictureInPictureController` has been already configured
 - [x] Same appearance as default one
 - [x] Handling video size changing
 - [x] Handling video errors
@@ -143,11 +143,22 @@ PiPManager.isPictureInPicturePossible = true
 PiPManager.isPictureInPicturePossible = false
 ```
 
+## To Do
+- Reduce private API usage
+- Investigate whether `PiPPictureInPictureController` should become a `AVPictureInPictureController` subclass
+- Implement rotation gesture, add 'soft' deceleration for pinch gesture
+- Improve automatic insets calculation
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Thanks & Credits
+
+- [iOS-Runtime-Headers](https://github.com/nst/iOS-Runtime-Headers "iOS-Runtime-Headers"): iOS Objective-C headers as derived from runtime introspection
+- [GKPictureInPictureView](https://github.com/gklka/GKPictureInPictureView "GKPictureInPictureView"): FaceTime/iOS PiP like throwable view
+
 ## License
 
-CustomBrowserKit is available under the MIT license. See the LICENSE file for more info.
+PiPhone is available under the MIT license. See the LICENSE file for more info.
 
