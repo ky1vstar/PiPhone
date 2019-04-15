@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PiPhone'
   s.version          = '1.0'
-  s.summary          = 'Let your users open links in their favorite browser'
+  s.summary          = 'Picture in picture video playback for iPhone'
 
   s.description      = <<-DESC
 CustomBrowserKit is a library designed to provide ability to open links in browser besides Safari to your awesome app's users. It is written in Objective-C and extended with Swift.

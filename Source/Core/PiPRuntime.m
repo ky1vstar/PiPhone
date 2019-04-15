@@ -54,12 +54,12 @@ static id retainedObject(id object) {
     
     PiPIndicatorLayer = NSClassFromString([NSString stringWithFormat:@"AVPi%@catorLayer", @"ctureInPictureIndi"]);
     
-//    if ([AVPictureInPictureController isPictureInPictureSupported] ||
-//        UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone ||
-//        ![AVPlayerLayer instancesRespondToSelector:kEnterPIPModeRedirectingVideoToLayer] ||
-//        ![AVPlayerLayer instancesRespondToSelector:kLeavePIPMode]) {
-//        return;
-//    }
+    if ([AVPictureInPictureController isPictureInPictureSupported] ||
+        UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone ||
+        ![AVPlayerLayer instancesRespondToSelector:kEnterPIPModeRedirectingVideoToLayer] ||
+        ![AVPlayerLayer instancesRespondToSelector:kLeavePIPMode]) {
+        return;
+    }
     
     [self swizzleIsPictureInPictureSupported];
     [self swizzleInitWithPlayerLayer];

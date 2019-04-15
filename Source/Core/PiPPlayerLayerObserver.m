@@ -47,6 +47,7 @@ static NSString *kRateKeyPath = @"player.rate";
 - (void)dealloc {
     [self removeObserversForPlayer:_player];
     
+    
     [_playerLayer removeObserver:self forKeyPath:kPlayerKeyPath];
     [_playerLayer removeObserver:self forKeyPath:kCurrentItemKeyPath];
     [_playerLayer removeObserver:self forKeyPath:kReadyForDisplayKeyPath];

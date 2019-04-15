@@ -908,7 +908,10 @@ static PiPPlayerViewControllerPosition PiPPlayerViewControllerPositionVisiblePos
 
 - (void)playerLayerObserverDidChangeShouldDismiss:(PiPPlayerLayerObserver *)playerLayerObserver {
     if (playerLayerObserver.shouldDismiss) {
-        [self stop];
+        // Must be called asynchronously due to `Cannot remove an observer <NSKeyValueObservance 0x...> for the key path "currentItem.hasEnabledAudio" from <AVQueuePlayer 0x...>, most likely because the value for the key "currentItem" has changed without an appropriate KVO notification being sent. Check the KVO-compliance of the AVQueuePlayer class` exception
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self stop];
+        });
     }
 }
 

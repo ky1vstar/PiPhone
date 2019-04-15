@@ -13,8 +13,8 @@ import PiPhone
 class ViewController: UIViewController {
     
     let urls = ["https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-                "https://video.twimg.com/ext_tw_video/1110679043915935745/pu/vid/720x1280/6OeRxCMr3tYaDNLB.mp4?tag=8",
-                "http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4"] // unsupported video
+                "https://video.twimg.com/ext_tw_video/1110679043915935745/pu/vid/720x1280/6OeRxCMr3tYaDNLB.mp4?tag=8",]
+//                "http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4"] // unsupported video
     
     let adjustmentBehaviors = [(behavior: PiPManagerContentInsetAdjustmentBehavior.navigationBar, title: "Navigation bar"),
                                (.tabBar, "Tab bar"),
