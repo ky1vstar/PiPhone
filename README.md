@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/PiPhone.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
 [![Platform](https://img.shields.io/cocoapods/p/PiPhone.svg?style=flat)](http://cocoapods.org/pods/PiPhone)
 
-PiPhone is a framework that drops in picture-in-picture support (user-initiated playback of video in a floating, resizable window) for iPhone devices. It's designed to mimic default `AVPictureInPictureController` behavior as much as possible.
+PiPhone is a drop in solution to support picture-in-picture (user-initiated playback of video in a floating, resizable window) on iPhone devices. It's designed to mimic default `AVPictureInPictureController` behavior as much as possible.
 
 ## Overview
 
