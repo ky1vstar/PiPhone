@@ -4,14 +4,14 @@ Pod::Spec.new do |s|
   s.summary          = 'Picture in picture video playback for iPhone'
 
   s.description      = <<-DESC
-CustomBrowserKit is a library designed to provide ability to open links in browser besides Safari to your awesome app's users. It is written in Objective-C and extended with Swift.
+PiPhone is a drop in solution to support picture-in-picture (user-initiated playback of video in a floating, resizable window) on iPhone devices.
                        DESC
 
-  s.homepage         = 'https://github.com/ky1vstar/CustomBrowserKit'
+  s.homepage         = 'https://github.com/ky1vstar/PiPhone'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ky1vstar' => 'ky1vstar@yandex.ru' }
-  s.source           = { :git => 'https://github.com/ky1vstar/CustomBrowserKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ky1vstar/PiPhone.git', :tag => s.version.to_s }
 
   s.platform = :ios
   s.ios.deployment_target = '9.0'
