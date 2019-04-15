@@ -12,7 +12,6 @@
 #import "PiPPlayerViewController.h"
 #import "PiPManager+Private.h"
 
-static NSString *kPictureInPicturePossible = @"pictureInPicturePossible";
 static __weak PiPPictureInPictureController *_currentPictureInPictureController;
 
 @interface PiPPictureInPictureController () {
@@ -36,6 +35,8 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
 
 @implementation PiPPictureInPictureController
 
+#pragma mark - Class methods
+
 + (void)pictureInPictureControllerWillStart:(PiPPictureInPictureController *)pictureInPictureController {
     if (_currentPictureInPictureController != pictureInPictureController) {
         [_currentPictureInPictureController stopPictureInPicture];
@@ -49,6 +50,8 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
         _currentPictureInPictureController = nil;
     }
 }
+
+#pragma mark - Initializers
 
 - (instancetype)initWithPlayerLayer:(AVPlayerLayer *)playerLayer {
     if (self = [super init]) {
@@ -84,6 +87,8 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
     [self stopPictureInPicture];
 }
 
+#pragma mark - AVPictureInPictureController methods
+
 - (void)setDelegate:(id<AVPictureInPictureControllerDelegate>)delegate {
     _delegate = delegate;
     
@@ -110,12 +115,8 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
     [_currentPlayerViewController stop];
 }
 
-- (void)updatePossibility {
-    BOOL newValue = _playerLayerObserver.valid && _allowsPictureInPicturePlayback && PiPManager.pictureInPicturePossible;
-    
-    if (newValue != _pictureInPicturePossible) {
-        self.pictureInPicturePossible = newValue;
-    }
+- (void)stopPictureInPictureEvenWhenInBackground {
+    [self stopPictureInPicture];
 }
 
 - (void)setAllowsPictureInPicturePlayback:(BOOL)allowsPictureInPicturePlayback {
@@ -124,7 +125,17 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
     [self updatePossibility];
 }
 
-#pragma mark - Mimic AVPictureInPictureController
+#pragma mark - Possibility
+
+- (void)updatePossibility {
+    BOOL newValue = _playerLayerObserver.valid && _allowsPictureInPicturePlayback && PiPManager.pictureInPicturePossible;
+    
+    if (newValue != _pictureInPicturePossible) {
+        self.pictureInPicturePossible = newValue;
+    }
+}
+
+#pragma mark - Runtime support for non-implemented methods
 
 - (BOOL)isKindOfClass:(Class)aClass {
     if (aClass == AVPictureInPictureController.class) {
@@ -155,13 +166,6 @@ static __weak PiPPictureInPictureController *_currentPictureInPictureController;
     anInvocation.target = nil;
     [anInvocation invoke];
 }
-
-//- (BOOL)pictureInPictureWasStartedWhenEnteringBackground {
-//    return NO;
-//}
-//
-//- (void)playerLayerLayoutDidChange {
-//}
 
 #pragma mark - PiPPlayerViewControllerDelegate
 

@@ -9,6 +9,7 @@
 #import "PiPPlayerLayerObserver.h"
 #import "NSObject+PiPhone.h"
 
+static BOOL kAlwaysReadyForDisplay = NO;
 static NSString *kPlayerKeyPath = @"player";
 static NSString *kCurrentItemKeyPath = @"player.currentItem";
 static NSString *kReadyForDisplayKeyPath = @"readyForDisplay";
@@ -32,6 +33,15 @@ static NSString *kRateKeyPath = @"player.rate";
 @end
 
 @implementation PiPPlayerLayerObserver
+
++ (void)initialize {
+    // AVQueuePlayer is broken on iOS 9. After currentItem being changed AVPlayerLayer's readyForDisplay will always remain NO;
+    if (@available(iOS 10.0, *)) {
+        kAlwaysReadyForDisplay = NO;
+    } else {
+        kAlwaysReadyForDisplay = YES;
+    }
+}
 
 - (instancetype)initWithPlayerLayer:(AVPlayerLayer *)playerLayer {
     if (self = [super init]) {
@@ -63,7 +73,7 @@ static NSString *kRateKeyPath = @"player.rate";
     [self addObserversForPlayer:_player];
     
     _currentPlayerItem = _player.currentItem;
-    _readyForDisplay = _playerLayer.readyForDisplay;
+    _readyForDisplay = _playerLayer.readyForDisplay || kAlwaysReadyForDisplay;
     _playerItemStatus = playerItem.status;
     _presentationSize = playerItem.presentationSize;
     _playing = _player.rate > 0;
@@ -139,7 +149,7 @@ static NSString *kRateKeyPath = @"player.rate";
         
     } else if ([keyPath isEqualToString:kReadyForDisplayKeyPath]) {
         NSNumber *number = [change[NSKeyValueChangeNewKey] ifNullThenNil];
-        _readyForDisplay = number.boolValue;
+        _readyForDisplay = number.boolValue || kAlwaysReadyForDisplay;
         
         [self updateValidity];
         [self updateInitializing];

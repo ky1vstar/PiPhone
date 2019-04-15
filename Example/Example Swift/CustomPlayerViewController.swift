@@ -49,6 +49,7 @@ class CustomPlayerViewController: UIViewController {
     func setupPictureInPicture() {
         pipToggleButton.setImage(AVPictureInPictureController.pictureInPictureButtonStartImage(compatibleWith: nil), for: .normal)
         pipToggleButton.setImage(AVPictureInPictureController.pictureInPictureButtonStopImage(compatibleWith: nil), for: .selected)
+        pipToggleButton.setImage(AVPictureInPictureController.pictureInPictureButtonStopImage(compatibleWith: nil), for: [.selected, .highlighted])
         
         guard AVPictureInPictureController.isPictureInPictureSupported(),
             let pictureInPictureController = AVPictureInPictureController(playerLayer: playerView.playerLayer) else {
