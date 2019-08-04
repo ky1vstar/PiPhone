@@ -45,8 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-    
     [self setupContentLayoutGuide];
     [self updateContentInsetsWithTraitCollection:self.traitCollection];
 }

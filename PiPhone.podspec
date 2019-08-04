@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PiPhone'
-  s.version          = '1.0'
+  s.version          = '1.0.1'
   s.summary          = 'Picture in picture video playback for iPhone'
 
   s.description      = <<-DESC
